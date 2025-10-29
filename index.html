@@ -1,41 +1,11 @@
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Feedback</title></head>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=https://script.google.com/a/macros/orf.ae/s/AKfycbwPwvCXz3L8DNzFm2GItJhBZCXIigO3-L6JVmt61FTycHHBU00z7M-lAqAzdt5QihMm/exec">
+  <title>Redirecting…</title>
+</head>
 <body>
-  <h3>Feedback</h3>
-  <form id="f">
-    <input id="name" placeholder="Name" required><br><br>
-    <textarea id="comments" placeholder="Comments"></textarea><br><br>
-    <button type="submit">Send</button>
-  </form>
-  <div id="status"></div>
-
-<script>
-const SCRIPT_URL = 'https://script.google.com/a/macros/orf.ae/s/AKfycbwPwvCXz3L8DNzFm2GItJhBZCXIigO3-L6JVmt61FTycHHBU00z7M-lAqAzdt5QihMm/exec'; // from Apps Script deployment
-
-document.getElementById('f').addEventListener('submit', async (e)=>{
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const comments = document.getElementById('comments').value.trim();
-  if(!name){ document.getElementById('status').textContent='Name required'; return; }
-  document.getElementById('status').textContent = 'Sending...';
-  try {
-    const resp = await fetch(SCRIPT_URL, {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({name, comments})
-    });
-    const data = await resp.json();
-    if (data.status === 'success') {
-      document.getElementById('status').textContent = 'Saved!';
-      e.target.reset();
-    } else {
-      document.getElementById('status').textContent = 'Error: ' + (data.message || 'unknown');
-    }
-  } catch(err) {
-    document.getElementById('status').textContent = 'Network error: ' + err;
-  }
-});
-</script>
+  <p>Redirecting to the feedback form — if you are not redirected automatically <a href="https://script.google.com/a/macros/orf.ae/s/AKfycbwPwvCXz3L8DNzFm2GItJhBZCXIigO3-L6JVmt61FTycHHBU00z7M-lAqAzdt5QihMm/exec">click here</a>.</p>
 </body>
 </html>
